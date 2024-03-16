@@ -1,9 +1,9 @@
-public class BigOSingleLoop {
+public class BigONotations {
 
     public static void main(String[] args) {
 
         int numberOfOperations = 0;
-        int n = Integer.MAX_VALUE; // size of data
+        int n = 1000; // size of data
         long startTime;
         long endTime;
         System.out.println("Input size n is = "+ n);
@@ -13,7 +13,7 @@ public class BigOSingleLoop {
         startTime = System.currentTimeMillis();
 
         for (int i = 0; i < n; i++){
-            numberOfOperations++;
+            numberOfOperations += 1;
         }
 
         endTime = System.currentTimeMillis();
@@ -31,7 +31,7 @@ public class BigOSingleLoop {
         for (int j = 0; j < n; j++) {
 
             for (int i = 0; i < n; i++) {
-                numberOfOperations++;
+                numberOfOperations += 1;
             }
 
         }
@@ -42,7 +42,26 @@ public class BigOSingleLoop {
 
         //---------------------------------------------------------------------------------------------------------
 
-        // Consecutive Statements
+        // Task 3 Three Nested Loops
+        numberOfOperations = 0;
+
+        startTime = System.currentTimeMillis();
+
+        for (int k = 0; k < n; k++) {
+
+            for (int j = 0; j < n; j++) {
+
+                for (int i = 0; i < n; i++) {
+                    numberOfOperations += 1;
+                }
+
+            }
+        }
+
+        endTime = System.currentTimeMillis();
+
+        System.out.println("Number of operations with 3 nested loop: "+numberOfOperations + " in "+(endTime-startTime)+" milliseconds");
+
 
         
 
